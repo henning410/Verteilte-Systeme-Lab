@@ -1,7 +1,18 @@
-package com.example.demo;
+package com.example.demo.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="shoppingItem")
 public class ShoppingItem {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name="amount")
     private int amount;
 
     public ShoppingItem() {
